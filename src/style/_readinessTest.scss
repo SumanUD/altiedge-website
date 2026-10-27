@@ -1,0 +1,275 @@
+.readinessPage {
+    .pageContents{
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;    
+    }
+    .detailedSteps{
+        .step{
+            min-height: 400px;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;    
+            margin-bottom: 25px;  
+            img{
+                height: 500px;
+                width: 100%;
+                object-fit: cover;    
+            }   
+            .step-contents{
+                position: relative;       
+                padding-left: 8%;
+                padding-top: 5%;
+                .stepTitle{
+                    font-family: var(--font-bold);
+                    font-size: var(--font-size3);
+                    line-height: 1;      
+                    color: var(--text-dark);    
+                    // width: clamp(200px, 25vw, 300px);
+                    margin-left: auto;
+                    // text-align: right;
+                    margin-bottom: 55px;
+                    z-index: 5;
+                    margin-right: 20%;
+                }
+                .stepDesc{
+                    // width: 55%;                    
+                }
+                .stepNo{
+                    font-family: var(--font-bold);
+                    position: absolute;
+                    top: 20%;                    
+                    transform: translateY(-50%);
+                    font-size: 8rem;
+                    z-index: 1;
+                    opacity: .1;
+                    line-height: 1;
+                    font-weight: 500;
+                }
+            }   
+
+            &:nth-child(even){
+                .step-contents{
+                    order: 1;    
+                    padding-left: 0;
+                    padding-right: 8%;
+                    padding-top:5%;
+                    .stepTitle{
+                        margin: 0 0 45px 20%;
+                        text-align: left;
+                    }
+                    .stepDesc{
+                        margin-left: auto;
+                        text-align: right;
+                    }
+                    .stepNo{
+                        right: 8%;
+                    }
+                }
+                .image-container{
+                    order: 2;
+                }
+            }
+
+        }
+    }
+
+    .test{
+        display: flex;        
+        .left-content{
+            position: sticky;
+            top: 150px;            
+            width: 45%;
+            height: fit-content;
+
+            .sectionDescription{
+                max-width: 100%;
+                padding-left: 120px;
+            }
+        }
+        .right-content{
+            margin-left: 12%;
+            width: 55%;
+        }
+    }
+}
+
+.redinessHeading{
+    font-size: 50px;
+}
+
+
+/* Tablet screens (<=1024px) */
+@media (max-width: 1024px) {
+  .readinessPage {
+    .detailedSteps {
+      .step {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+
+        img {
+          height: 400px;
+          object-fit: cover;
+        }
+
+        .step-contents {
+          padding: 0 5%;
+          text-align: center;
+
+          .stepTitle {
+            font-size: 1.6rem;
+            margin: 0 auto 25px;
+            text-align: center;
+          }
+
+          .stepDesc {
+            max-width: 90%;
+            margin: 0 auto 20px;
+            font-size: 1.05rem;
+          }
+
+          .stepNo {
+            font-size: 5rem;
+            top: 10%;
+            opacity: 0.08;
+          }
+        }
+
+        &:nth-child(even) {
+          .step-contents {
+            order: 2;
+            padding: 0 5%;
+            text-align: center;
+
+            .stepTitle,
+            .stepDesc {
+              text-align: center;
+              margin: 0 auto 25px;
+            }
+
+            .stepNo {
+              right: auto;
+              left: 10%;
+            }
+          }
+
+          .image-container {
+            order: 1;
+          }
+        }
+      }
+    }
+
+    .test {
+      flex-direction: column;
+
+      .left-content,
+      .right-content {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+      }
+
+      .left-content {
+        position: static;
+        top: auto;
+
+        .sectionDescription {
+          padding: 0;
+          text-align: center;
+          max-width: 90%;
+          margin: 0 auto 40px;
+        }
+      }
+    }
+
+    .redinessHeading {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+/* Mobile screens (<=576px) */
+@media (max-width: 576px) {
+  .readinessPage {
+    .detailedSteps {
+      .step {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 50px;
+
+        img {
+          height: 250px;
+          width: 100%;
+          border-radius: 6px;
+        }
+
+        .step-contents {
+          padding: 0 10px;
+          text-align: center;
+
+          .stepTitle {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+          }
+
+          .stepDesc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+          }
+
+          .stepNo {
+            font-size: 3.5rem;
+            top: 12%;
+          }
+        }
+      }
+    }
+
+    .test {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 15px;
+
+      .left-content,
+      .right-content {
+        width: 100%;
+      }
+
+      .left-content .sectionDescription {
+        padding: 0;
+        text-align: center;
+        max-width: 100%;
+      }
+    }
+
+    .redinessHeading {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+}
+
+
+.readinessStepTitle {
+  font-family: var(--font-bold);
+  font-size: var(--font-size3);
+  line-height: 1;      
+  color: var(--text-dark);    
+  // width: clamp(200px, 25vw, 300px);
+  margin-left: auto;
+  // text-align: right;
+  margin-bottom: 55px;
+  z-index: 5;
+  margin-right: 20%;
+}
+
+
+  .art-pc {
+    padding: 60px 15px 0 !important;
+  }

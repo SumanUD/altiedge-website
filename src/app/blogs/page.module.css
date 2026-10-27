@@ -1,0 +1,93 @@
+/* page.module.css */
+
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.heroImage {
+  border-radius: 12px;
+  margin: 0 auto 30px;
+  display: block;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.meta {
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 35px;
+}
+
+.meta p {
+  margin: 5px 0;
+}
+
+.content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-size: 1.05rem;
+}
+
+.content p {
+  margin-bottom: 1.5em;
+}
+
+.content h2, .content h3 {
+  margin-top: 1.6em;
+  color: #2a2a2a;
+}
+
+.content a {
+  color: #3178f6;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: white;
+  background-color: #1a73e8;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.backLink:hover {
+  background-color: #135ec9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}

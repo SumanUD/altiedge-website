@@ -1,0 +1,176 @@
+.contact-page{    
+
+    .pageContents{
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        color: white;
+        padding: 160px 15px 80px;
+
+        .contact-page-top{
+            display: flex;   
+            flex-direction: column;
+            .page-title{
+                font-size: clamp(3rem, 25vw, 8rem);                
+                font-family: var(--font-bold);
+                font-weight: 900;
+                letter-spacing: 1px;
+            }
+            .contact-contents{
+                display: flex;
+                .left{
+                    width: 40%;
+                }
+                .left{
+                    .description{
+                        opacity: .6;
+                        max-width: 450px;
+                    }
+                }
+                .right{
+                    width: 60%;
+                    display: flex;
+                    gap: 100px;
+                    .info-title{
+                        font-size: var(--font-size5);
+                        font-family: var(--font-bold);                        
+                        letter-spacing: 1px;
+                        margin-bottom: 15px;                        
+                    }
+                    img{
+                        filter: var(--filter-light);
+                        margin-right: 8px;
+                    }
+                    ul{
+                        li{
+                            margin-bottom: 12px;
+                            a{
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                                img{
+                                    height: 30px;
+                                    width: 30px;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }         
+        }        
+    }
+
+    .contact-form{
+
+        margin-top: 150px;
+        margin-bottom: 80px;
+
+        .page-contacts{
+            display: flex;
+            gap: 120px;
+            .left{
+                width: 40%;
+                .left-title{
+                    font-family: var(--font-bold);
+                    font-size: var(--font-size3);
+                }
+            }
+            .right{
+                width: 55%;
+                input, textarea{
+                    color: var(--text-light);
+                    border-color: var(--text-light);
+                    width: 100%;
+                }
+
+                .btn-primary{
+                    width: 150px;
+                    text-align: center;                                        
+                    background-color: rgba(225,225,225, .7);
+                    color: var(--text-dark2);
+                    font-size: var(--font-size5);
+                    border-radius: 95px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+  .contact-page {
+    .pageContents {
+      padding: 100px 20px 60px;
+
+      .contact-page-top {
+        .page-title {
+          font-size: clamp(2rem, 10vw, 4rem);
+          text-align: center;
+        }
+
+        .contact-contents {
+          flex-direction: column;
+          gap: 40px;
+
+          .left,
+          .right {
+            width: 100%;
+          }
+
+          .right {
+            flex-direction: column;
+            gap: 40px;
+            align-items: flex-start;
+
+            .info-title {
+              font-size: 1.3rem;
+            }
+
+            ul li a img {
+              height: 24px;
+              width: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      margin-top: 80px;
+      margin-bottom: 60px;
+
+      .page-contacts {
+        flex-direction: column;
+        gap: 50px;
+
+        .left,
+        .right {
+          width: 100%;
+        }
+
+        .left {
+          .left-title {
+            text-align: center;
+            font-size: 1.6rem;
+          }
+        }
+
+        .right {
+          input,
+          textarea {
+            font-size: 1rem;
+            padding: 10px;
+          }
+
+          .btn-primary {
+            width: 100%;
+            font-size: 1rem;
+            padding: 10px 0;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,328 @@
+nav {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: -webkit-fill-available;
+    height: 90px;
+    color: var(--text-light);
+    transition: top 0.3s;
+    .navigation {
+        padding: 0 80px;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 200px 1fr 200px;        
+        align-items: center;
+        .logo {
+            height: 60px;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }        
+        .menu-section ul {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 75px;
+            background: rgba(0, 0, 0,.06);
+            backdrop-filter: blur(8px);
+            overflow: hidden;
+            text-align: center;
+            li a {
+                display: inline-block;
+                padding: 8px 15px;
+                font-size: .9rem;
+                border-radius: 60px;
+                position: relative;
+                margin: 5px 6px;
+                font-weight: 500;
+                &.active {
+                    background: var(--text-light);
+                    color: var(--text-dark2 );
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 20%;
+                    background: var(--text-light);
+                    border-radius: inherit;
+                    transition: all .3s ease-in-out;
+                    z-index: -1;
+                    opacity: 0;
+                }
+                &:hover {
+                    color: var(--text-dark2);
+                    &::after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+
+        .action-section, .onlyMobile {
+            display: flex;
+            justify-content: flex-end;
+            .get-in-touch {
+                padding: 12px 25px;
+                border-radius: 55px;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                font-size: .9rem;
+                color: var(--text-dark2);
+                font-weight: 500;
+                border: 1px solid rgba(0,0,0,.3);
+            }
+        }
+
+        .hamburger-menu{   
+            display: none;
+            position: absolute;
+            right: 15px;
+            top:25px;
+            width: 40px;                     
+            .hamburger .line{
+                width: 30px;
+                height: 3px;
+                background-color:var(--bg-light);
+                display: block;
+                margin: 6px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                border-radius: 12px;
+
+                &:nth-of-type(1){
+                    margin-top: 0;
+                }
+                &:nth-of-type(3){
+                    margin-bottom: 0;
+                }
+            }
+
+            .hamburger:hover{
+                cursor: pointer;
+            }
+
+            /* ONE */
+
+            #hamburger-1.is-active .line:nth-child(2){
+                opacity: 0;
+            }
+            #hamburger-1.is-active .line:nth-child(1) {
+                -webkit-transform: translateY(9px) rotate(45deg);
+                -ms-transform: translateY(9px) rotate(45deg);
+                -o-transform: translateY(9px) rotate(45deg);
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            #hamburger-1.is-active .line:nth-child(3) {
+                -webkit-transform: translateY(-9px) rotate(-45deg);
+                -ms-transform: translateY(-9px) rotate(-45deg);
+                -o-transform: translateY(-9px) rotate(-45deg);
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+
+        }
+
+        @media (max-width : 1250px){
+            grid-template-columns: 1fr 1fr;
+            padding: 15px;
+            .menu-section{
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+            .menu-section ul{
+                flex-direction: column;
+                padding: 45px 25px 25px;
+                width: fit-content;
+                border-radius: 25px;
+                margin: 0;
+                margin-left: auto;
+                li{
+                    display: none;
+                }
+            }
+            .action-section{
+                display: none;                
+            }
+        }
+        @media (max-width: 1250px) {
+  nav {
+    .navigation {
+      .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        z-index: 5000;
+
+        .hamburger .line {
+          width: 30px;
+          height: 3px;
+          background-color: var(--text-light);
+          display: block;
+          margin: 6px auto;
+          border-radius: 12px;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+    }    
+}
+@media (max-width: 1250px) {
+  nav.header-nav {
+    .logo{
+      z-index: 99999;
+      padding: 8px;
+      img{
+         filter: brightness(0) invert(1);
+      }
+    }
+    .navigation {
+      grid-template-columns: 1fr 1fr;
+      padding: 15px;
+
+      .menu-section {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        // background: rgba(0, 0, 0,.3);
+
+
+        ul {
+          flex-direction: column;
+          padding: 45px 25px 25px;
+          width: fit-content;
+          border-radius: 25px;
+          margin: 0;
+          margin-left: auto;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(8px);
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+          max-height: 0;
+          opacity: 0;
+          pointer-events: none;
+          width: 100vw;
+          height: 100vh;
+
+          li {
+            display: block;
+            margin: 10px 0;
+          }
+        }
+
+        // Show menu when body has .menu-open
+        body.menu-open & ul {
+          max-height: 500px; // or enough to show all items
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      .action-section {
+        display: none;
+      }
+
+
+      .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        z-index: 5000;
+
+        .hamburger .line {
+          width: 30px;
+          height: 3px;
+          background-color: var(--text-light);
+          display: block;
+          margin: 6px auto;
+          border-radius: 12px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &.is-active {
+          .line:nth-child(2) {
+            opacity: 0;
+          }
+          .line:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+          }
+          .line:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.onlyMobile {
+  display: none !important; /* hidden by default (desktop/tablet) */
+}
+
+@media (max-width: 768px) {
+  .onlyMobile {
+    display: block !important; /* visible on mobile */
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Hide-on-scroll header
+   --------------------------------------------------------------------------- */
+
+/* Moved off screen with a transform rather than `top: -90px`.
+   -90px was the desktop header height hardcoded into the scroll handler, so at
+   breakpoints where the header is a different height it slid the bar the wrong
+   distance and left the hamburger stranded half on screen. translateY(-100%)
+   is always exactly the header's own height, and it animates on the compositor
+   instead of triggering layout on every frame. */
+nav.header-nav {
+  transition: transform 0.3s ease;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+/* Lock the page behind the open mobile menu.
+   The menu is a child of the fixed header, so scrolling while it was open used
+   to hide the header and take the whole menu with it -- including the
+   hamburger needed to close it. */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Below the breakpoint where the desktop links collapse, the hamburger is the
+   only navigation there is -- so the header stays pinned and the menu is always
+   reachable. Hiding it left the menu unreachable anywhere except the top of the
+   page, which is what the "hamburger disappears while scrolling" reports were
+   really about. Enforced in CSS as well as in the scroll handler so it still
+   holds if the JS fails to run on this statically exported site. */
+@media (max-width: 1250px) {
+  nav.header-nav.is-hidden {
+    transform: none;
+  }
+}
+
+/* Respect users who have asked for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  nav.header-nav {
+    transition: none;
+  }
+}
